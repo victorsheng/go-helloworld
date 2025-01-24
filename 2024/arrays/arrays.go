@@ -3,6 +3,7 @@ package main
 import "fmt"
 
 func main() {
+	//一维数组，二位数组的创建
 
 	var a [5]int
 	fmt.Println("emp:", a)
