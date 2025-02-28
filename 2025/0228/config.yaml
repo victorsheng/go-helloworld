@@ -1,0 +1,9 @@
+users:
+  - name: "Alice"
+    role: "admin"
+    permissions: ["read", "write"]
+  - name: "Bob"
+    role: "user"
+    settings:
+      theme: "dark"
+      notifications: false
