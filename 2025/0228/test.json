@@ -1,0 +1,59 @@
+{
+	"logtype": {
+		"type": "file",
+		"_file.level": "TRACE",
+		"file.level": "INFO",
+		"file.enabled": true,
+		"file.filename": "/tmp/victor/pipeline-log-agent-offline"
+	},
+	"stream_engine": {
+		"enable": true,
+		"source": {
+			"type": "file",
+			"sources": [{
+				"name": "test",
+				"source_pattern": "/action_??.log",
+				"path": "/tmp/victor",
+				"kafka_name": "kafka1",
+				"kafka_topic": "test_fu_agent",
+				"enable": "true",
+				"context_filename": "test_fu_agent.context"
+			}]
+		},
+		"processors": "logagent"
+	},
+	"kafkaoutput": [{
+		"name": "kafka1",
+		"hostports": "172.20.20.2:9092",
+		"concurrent": 1,
+		"enable": true
+	}],
+	"server": {
+		"listen-addr": "0.0.0.0:9807"
+	},
+	"jobqueue": {
+		"job_length": 4096,
+		"conn_timeout": 1000,
+		"read_timeout": 2000,
+		"job_worker_num": 2048,
+		"enable": true
+	},
+	"configapi": {
+		"apphost": "http://cfg.srv.in.ixiaochuan.cn"
+	},
+	"opmediaapi": {
+		"apphost": "http://opmedia.srv.in.ixiaochuan.cn"
+	},
+	"perfcounter": {
+		"host": "perfcounter.in.ixiaochuan.cn:9090",
+		"sid": "pipeline",
+		"prefix": "",
+		"endpoint": ""
+	},
+	"lookupd": {
+		"hostport": "lookupd.in.ixiaochuan.cn:10480",
+		"sid": "pipeline",
+		"timeout": 30,
+		"poolsize": 1
+	}
+}

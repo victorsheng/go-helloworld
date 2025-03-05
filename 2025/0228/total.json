@@ -1,0 +1,383 @@
+{
+    "log_conf": {
+      "logdir": "/data/golang/pipeline-log-agent",
+      "prefix": "pipeline-log-agent"
+    },
+    "logtype": {
+      "type": "file,scribe",
+        "file.level": "INFO",
+        "file.enabled": true,
+        "file.filename": "/data/golang/pipeline-log-agent/pipeline-log-agent-offline",
+        "scribe.level": "INFO",
+        "scribe.enabled": true,
+        "scribe.endpoint": "127.0.0.1:9121",
+        "scribe.category": "logc_pipeline-log-agent-offline",
+        "scribe.format": "[%H] [%D %T] [%L] (%S) %M"
+    },
+    "stream_engine": {
+      "enable": true ,
+      "source": {
+        "type": "file",
+        "sources": [
+            {
+              "name": "im_chat",
+              "source_pattern": "/??????/im_chat_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "im_chat",
+              "enable": "true",
+              "context_filename": "im_chat.context"
+            },
+            {
+              "name": "im_push",
+              "source_pattern": "/??????/im_push_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "im_push",
+              "enable": "true",
+              "context_filename": "im_push.context"
+            },
+            {
+              "name": "advert",
+              "source_pattern": "/??????/advert_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "advert",
+              "enable": "true",
+              "context_filename": "advert.context"
+            },
+            {
+              "name": "advert_rtb",
+              "source_pattern": "/??????/advert_rtb_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "advert_rtb",
+              "enable": "true",
+              "context_filename": "advert_rtb.context"
+            },
+            {
+              "name": "action",
+              "source_pattern": "/??????/action_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "raw_action",
+              "enable": "true",
+              "context_filename": "file-reader.context"
+            },
+            {
+              "name": "app_action_zuiyou",
+              "source_pattern": "/??????/app_action_zuiyou_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "raw_action",
+              "enable": "true",
+              "context_filename": "app_action_zuiyou.context"
+            },
+            {
+              "name": "ugcvideo",
+              "source_pattern": "/??????/ugcvideo_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "ugcvideo",
+              "enable": "true",
+              "context_filename": "ugcvideo.context"
+            },
+            {
+              "name": "profile",
+              "source_pattern": "/??????/profile_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "profile",
+              "enable": "true",
+              "context_filename": "profile.context"
+            },
+            {
+              "name": "applist",
+              "source_pattern": "/??????/applist_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "applist",
+              "enable": "true",
+              "context_filename": "applist.context"
+            },
+            {
+              "name": "search",
+              "source_pattern": "/??????/search_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "search",
+              "enable": "true",
+              "context_filename": "search.context"
+            },
+            {
+              "name": "video",
+              "source_pattern": "/??????/video_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "video",
+              "enable": "true",
+              "context_filename": "video.context"
+            },
+            {
+              "name": "app_abtest_expose_zuiyou",
+              "source_pattern": "/??????/app_abtest_expose_zuiyou_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "zuiyou_abtest_expose",
+              "enable": "true",
+              "context_filename": "zuiyou_abtest_expose.context"
+            },
+            {
+              "name": "titan_model_feature",
+              "source_pattern": "/??????/titan_model_feature_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "titan_model_feature",
+              "enable": "true",
+              "context_filename": "titan_model_feature.context"
+            },
+            {
+              "name": "zuiyou_story_titan_model_feature",
+              "source_pattern": "/??????/zuiyou_story_titan_model_feature_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "zy_story_titan_model_feature",
+              "enable": "true",
+              "context_filename": "zuiyou_story_titan_model_feature.context"
+            },
+            {
+              "name": "app_action_tiantian",
+              "source_pattern": "/??????/app_action_tiantian_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "raw_action",
+              "enable": "true",
+              "context_filename": "app_action_tiantian.context"
+            },
+            {
+              "name": "app_action_zuiyou_lite",
+              "source_pattern": "/??????/app_action_zuiyou_lite_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "raw_action",
+              "enable": "true",
+              "context_filename": "app_action_zuiyou_lite.context"
+            },
+            {
+              "name": "app_action_zuiyou_speed",
+              "source_pattern": "/??????/app_action_zuiyou_speed_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "raw_action",
+              "enable": "true",
+              "context_filename": "app_action_zuiyou_speed.context"
+            },
+            {
+              "name": "app_action_pipi_play",
+              "source_pattern": "/??????/app_action_pipi_play_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "app_action_pipi_play",
+              "enable": "true",
+              "context_filename": "app_action_pipi_play.context"
+            },
+            {
+              "name": "pipi_titan_model_feature",
+              "source_pattern": "/??????/pipi_titan_model_feature_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "pipi_titan_model_feature",
+              "enable": "true",
+              "context_filename": "pipi_titan_model_feature.context"
+            },
+            {
+              "name": "app_action_omg",
+              "source_pattern": "/??????/app_action_omg_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "raw_action_omg",
+              "enable": "true",
+              "context_filename": "app_action_omg.context"
+            },
+            {
+              "name": "app_video_diagnosis_omg",
+              "source_pattern": "/??????/app_video_diagnosis_omg_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "app_video_diagnosis_omg",
+              "enable": "true",
+              "context_filename": "app_video_diagnosis_omg.context"
+            },
+            {
+              "name": "titan_model_feature_omg",
+              "source_pattern": "/??????/titan_model_feature_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "titan_model_feature",
+              "enable": "true",
+              "context_filename": "app_titan_maga.context"
+            },
+            {
+              "name": "action_maga",
+              "source_pattern": "/??????/action_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "raw_action_maga",
+              "enable": "true",
+              "context_filename": "file-reader.context"
+            },
+            {
+              "name": "app_action_maga",
+              "source_pattern": "/??????/app_action_maga_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "raw_action_maga",
+              "enable": "true",
+              "context_filename": "app_action_maga.context"
+            },
+            {
+              "name": "titan_model_feature_maga",
+              "source_pattern": "/??????/titan_model_feature_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "titan_model_feature",
+              "enable": "true",
+              "context_filename": "app_titan_maga.context"
+            },
+            {
+              "name": "app_video_diagnosis_maga",
+              "source_pattern": "/??????/app_video_diagnosis_maga_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "app_video_diagnosis_maga",
+              "enable": "true",
+              "context_filename": "app_video_diagnosis_maga.context"
+            },
+            {
+              "name": "app_event_action_maga",
+              "source_pattern": "/??????/app_event_action_maga_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "app_event_action_maga",
+              "enable": "true",
+              "context_filename": "app_event_maga.context"
+            },
+            {
+              "name": "app_action_topo",
+              "source_pattern": "/??????/app_action_topo_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "app_action_topo",
+              "enable": "true",
+              "context_filename": "app_action_topo.context"
+            },
+            {
+              "name": "app_action_hanabi",
+              "source_pattern": "/??????/app_action_hanabi_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "app_action_hanabi",
+              "enable": "true",
+              "context_filename": "app_action_hanabi.context"
+            },
+            {
+              "name": "xiaoshuo_im_push",
+              "source_pattern": "/??????/xiaoshuo_im_push_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "xiaoshuo-im-push",
+              "enable": "true",
+              "context_filename": "xiaoshuo_im_push.context"
+            },
+            {
+              "name": "app_action_weam",
+              "source_pattern": "/??????/app_action_weam_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "frodo_raw_action_data",
+              "enable": "true",
+              "context_filename": "app_action_weam.context"
+            },
+            {
+              "name": "im_push_weam",
+              "source_pattern": "/??????/im_push_weam_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "weam_im_push",
+              "enable": "true",
+              "context_filename": "im_push_weam.context"
+            },
+            {
+              "name": "weam_titan_model_feature",
+              "source_pattern": "/??????/weam_titan_model_feature_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "weam_titan_model_feature",
+              "enable": "true",
+              "context_filename": "weam_titan_model_feature.context"
+            },
+            {
+              "name": "app_action_lfacc",
+              "source_pattern": "/??????/app_action_lfacc_??.log",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "raw_action_lfacc",
+              "enable": "true",
+              "context_filename": "app_action_lfacc.context"
+            },
+            {
+              "name": "argo_community_action",
+              "source_pattern": "/argo_community_action-????-??-??_00000",
+              "path": "/data/log/tbstat",
+              "kafka_name": "kafka1",
+              "kafka_topic": "argo_community_actionlog",
+              "enable": "true",
+              "context_filename": "argo_community_action.contex"
+            }
+          ]
+      },
+      "processors": "logagent"
+    },
+    "kafkaoutput": [
+      {
+        "name": "kafka1",
+        "hostports": "172.16.1.187:9092,172.16.1.188:9092,172.16.1.189:9092,172.16.1.194:9092,172.16.1.195:9092,172.16.3.88:9092,172.16.3.89:9092",
+        "concurrent": 8,
+        "enable": true
+      },
+      {
+        "name": "kafka2",
+        "hostports": "172.16.1.187:9092,172.16.1.188:9092,172.16.1.189:9092,172.16.1.194:9092,172.16.1.195:9092,172.16.3.88:9092,172.16.3.89:9092",
+        "concurrent": 8,
+        "enable": true
+      }
+    ],
+    "server": {
+      "listen-addr": "0.0.0.0:9807"
+    },
+    "jobqueue": {
+      "job_length": 4096,
+      "conn_timeout": 1000,
+      "read_timeout": 2000,
+      "job_worker_num": 2048,
+      "enable": true
+    },
+    "configapi": {
+      "apphost": "http://cfg.srv.in.ixiaochuan.cn"
+    },
+    "opmediaapi": {
+      "apphost": "http://opmedia.srv.in.ixiaochuan.cn"
+    },
+    "perfcounter": {
+      "host": "perfcounter.in.ixiaochuan.cn:9090",
+      "sid": "pipeline",
+      "prefix": "",
+      "endpoint": ""
+    },
+    "lookupd": {
+      "hostport": "lookupd.in.ixiaochuan.cn:10480",
+      "sid": "pipeline",
+      "timeout": 30,
+      "poolsize": 1
+    }
+  }

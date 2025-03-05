@@ -1,0 +1,113 @@
+kafka_topic:
+  - name: kafka1
+    hostports: 172.16.1.187:9092,172.16.1.188:9092,172.16.1.189:9092,172.16.1.194:9092,172.16.1.195:9092,172.16.3.88:9092,172.16.3.89:9092
+    concurrent: 8
+    enable: true
+  - name: kafka2
+    hostports: 172.16.1.187:9092,172.16.1.188:9092,172.16.1.189:9092,172.16.1.194:9092,172.16.1.195:9092,172.16.3.88:9092,172.16.3.89:9092
+    concurrent: 8
+    enable: true
+
+sources:
+  - name: action
+    source_pattern: '/??????/action_??.log'
+    path: /data/log/tbstat
+    kafka_name: kafka1
+    kafka_topic: raw_action
+    context_filename: file-reader.context
+
+  - source_pattern: '/??????/advert_??.log'
+    path: /data/log/tbstat
+    kafka_name: kafka1
+    kafka_topic: advert
+    context_filename: advert.context
+
+  - source_pattern: '/??????/im_chat_??.log'
+    path: /data/log/tbstat
+    kafka_name: kafka1
+    kafka_topic: im_chat
+    context_filename: im_chat.context
+
+  - source_pattern: '/??????/im_push_??.log'
+    path: /data/log/tbstat
+    kafka_name: kafka1
+    kafka_topic: im_push
+    context_filename: im_push.context
+
+  - source_pattern: '/??????/ugcvideo_??.log'
+    path: /data/log/tbstat
+    kafka_name: kafka1
+    kafka_topic: ugcvideo
+    context_filename: ugcvideo.context
+
+  - source_pattern: '/??????/profile_??.log'
+    path: /data/log/tbstat
+    kafka_name: kafka1
+    kafka_topic: profile
+    context_filename: profile.context
+
+  - source_pattern: '/??????/applist_??.log'
+    path: /data/log/tbstat
+    kafka_name: kafka1
+    kafka_topic: applist
+    context_filename: applist.context
+
+  - source_pattern: '/??????/search_??.log'
+    path: /data/log/tbstat
+    kafka_name: kafka1
+    kafka_topic: search
+    context_filename: search.context
+
+  - source_pattern: '/??????/app_action_pipi_play_??.log'
+    path: /data/log/tbstat
+    kafka_name: kafka1
+    kafka_topic: app_action_pipi_play
+    context_filename: app_action_pipi_play.context
+
+  - source_pattern: '/??????/video_??.log'
+    path: /data/log/tbstat
+    kafka_name: kafka1
+    kafka_topic: video
+    context_filename: video.context
+
+  - source_pattern: '/??????/app_action_zuiyou_lite_??.log'
+    path: /data/log/tbstat
+    kafka_name: kafka1
+    kafka_topic: raw_action
+    context_filename: app_action_zuiyou_lite.context
+
+  - source_pattern: '/??????/app_action_zuiyou_??.log'
+    path: /data/log/tbstat
+    kafka_name: kafka1
+    kafka_topic: raw_action
+    context_filename: app_action_zuiyou.context
+
+  - source_pattern: '/??????/app_action_zuiyou_speed_??.log'
+    path: /data/log/tbstat
+    kafka_name: kafka1
+    kafka_topic: raw_action
+    context_filename: app_action_zuiyou_speed.context
+
+  - source_pattern: '/??????/app_action_hanabi_??.log'
+    path: /data/log/tbstat
+    kafka_name: kafka1
+    kafka_topic: raw_action
+    context_filename: app_action_hanabi.context
+
+  - source_pattern: '/??????/app_action_omg_??.log'
+    path: /data/log/tbstat
+    kafka_name: kafka1
+    kafka_topic: raw_action
+    context_filename: app_action_omg.context
+
+  - source_pattern: '/??????/app_action_tiantian_??.log'
+    path: /data/log/tbstat
+    kafka_name: kafka1
+    kafka_topic: raw_action
+    context_filename: app_action_tiantian.context
+
+  - source_pattern: '/??????/advert_rtb_??.log'
+    path: /data/log/tbstat
+    kafka_name: kafka1
+    kafka_topic: advert_rtb
+    context_filename: advert_rtb.context

@@ -20,3 +20,12 @@ go run 2025/0123/readjson.go
 
 go run 2025/0122/kafka.go
 
+go run 2025/0227/redini
+
+
+go run 2025/0227/readini/main.go
+
+
+cd /Users/victor/code/go-helloworld
+go run 2025/0228/main.go
+
