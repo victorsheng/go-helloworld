@@ -1,0 +1,7 @@
+bin
+src
+.DS_Store
+*.log
+.vscode
+.idea
+vendor
